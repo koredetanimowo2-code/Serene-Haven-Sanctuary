@@ -20,9 +20,13 @@ export default function Stay() {
           >
             <h1 className="font-serif text-6xl md:text-7xl text-foreground mb-8">Don't Just Visit. Stay.</h1>
             <p className="text-2xl text-foreground/80 italic font-serif mb-8">Why rush restoration?</p>
-            <p className="text-lg text-foreground/70 font-light leading-relaxed">
+            <p className="text-lg text-foreground/70 font-light leading-relaxed mb-6">
               Our multi-day stays let you go deeper. Wake up inside the Cocoon. Step directly into your treatments. Sleep in absolute silence. Leave completely transformed.
             </p>
+            <div className="bg-card p-6 rounded-2xl border border-border inline-block text-left">
+              <h4 className="font-serif text-xl mb-2 text-primary">For Solo Travellers</h4>
+              <p className="text-foreground/70 font-light">You don't need a companion to choose rest. Solo guests are some of our most beloved — they come fully open, and they leave fully themselves.</p>
+            </div>
           </motion.div>
 
           <motion.div 
@@ -160,6 +164,23 @@ export default function Stay() {
                     <span className="text-foreground/90 font-medium">{feature}</span>
                   </div>
                 ))}
+              </div>
+              <div className="mt-12 bg-card p-8 rounded-3xl border border-border">
+                <h3 className="font-serif text-2xl mb-4 text-primary">Night-time Rituals</h3>
+                <p className="text-foreground/80 font-light leading-relaxed">
+                  Warm herbal tea delivered to your room at 9pm. A handwritten note from the team each morning. Turndown service with a small card bearing an encouraging word. Optional bedtime sound selection: rainfall, river, or absolute silence.
+                </p>
+              </div>
+              <div className="mt-8 bg-card p-8 rounded-3xl border border-border">
+                <h3 className="font-serif text-2xl mb-4 text-primary">Scent Menu</h3>
+                <p className="text-foreground/80 font-light leading-relaxed mb-4">
+                  Guests choose an ambient scent for their room on arrival.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {["Lagos Earth", "Forest at Dawn", "River Stone", "Garden After Rain", "Harmattan"].map(scent => (
+                    <span key={scent} className="px-3 py-1 bg-background rounded-full text-sm border border-border">{scent}</span>
+                  ))}
+                </div>
               </div>
             </motion.div>
 

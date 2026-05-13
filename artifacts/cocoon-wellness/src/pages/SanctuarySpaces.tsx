@@ -51,6 +51,18 @@ const spaces = [
     desc: "The back of The Cocoon opens directly into pure nature. A winding, private path through ancient trees, unbroken birdsong, and dappled light. There are no destinations. Just the walk. Thirty minutes of pure, uninterrupted presence.", 
     img: "/images/sanctuary-nature.png",
     exclusive: true
+  },
+  { 
+    id: "autism",
+    name: "Autism-Friendly Room", 
+    desc: "A softly lit room with rounded corners, weighted blankets in earth tones folded on a low seat, soft foam textures on the walls, a single warm lamp, very calm and predictable — designed for comfort and safety.", 
+    img: "/images/sanctuary-autism.png" 
+  },
+  { 
+    id: "dining",
+    name: "The Quiet Dining Room", 
+    desc: "Twice a day, breakfast and dinner are served in the Quiet Dining Room. No phones. No performance. Just warm food, real conversation if you want it, or the gentle sound of someone else's calm. Meals are Nigerian-inspired with global touches — because food, too, is a form of care.", 
+    img: "/images/sanctuary-dining.png" 
   }
 ];
 
@@ -83,6 +95,19 @@ export default function SanctuarySpaces() {
       </section>
 
       <section className="py-24">
+        <div className="container mx-auto px-6 lg:px-12 text-center mb-16">
+          <h2 className="font-serif text-4xl text-foreground">Scent Menu</h2>
+          <p className="text-xl text-foreground/80 font-light max-w-3xl mx-auto mt-4 mb-10">
+            Guests choose an ambient scent for their space on arrival.
+          </p>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+            {["Lagos Earth", "Forest at Dawn", "River Stone", "Garden After Rain", "Harmattan"].map(scent => (
+              <div key={scent} className="p-4 bg-card rounded-xl border border-border shadow-sm text-foreground/90 font-medium">
+                {scent}
+              </div>
+            ))}
+          </div>
+        </div>
         <div className="container mx-auto px-6 lg:px-12 space-y-32">
           {spaces.map((space, idx) => (
             <motion.div 

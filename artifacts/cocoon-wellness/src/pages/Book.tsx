@@ -15,13 +15,14 @@ export default function Book() {
   
   const getPreFilledMessage = () => {
     switch(serviceWorld) {
-      case "women": return "I am interested in booking a Women's World treatment at The Cocoon...";
-      case "men": return "I would like to book a Men's World treatment at The Cocoon...";
-      case "children": return "I am enquiring about Children's World services...";
-      case "postpartum": return "I would like to enquire about the Postpartum Suite. I am a new/recent mother and...";
-      case "pets": return "I am enquiring about Pets' World services for my pet...";
-      case "hair": return "I am interested in Hair Studio services — specifically...";
-      default: return "Hello, I have an enquiry about The Cocoon...";
+      case "women": return "Hello, The Cocoon team. I came across your sanctuary and I've been meaning to reach out. I'd love to book a Women's World treatment — a moment that's just mine. I've been carrying quite a bit lately, and I think I need this. I'm interested in [the treatment you offer] and would love to know what dates are available. Please be in touch when you can. With warmth.";
+      case "men": return "Hello, The Cocoon. I don't usually do things like this for myself, but something about your space made me want to. I'd love to book a Men's World treatment — perhaps a massage or a therapy session. I'm not entirely sure where to start, and I think that's okay. Could you help me find the right thing? Looking forward to hearing from you.";
+      case "children": return "Hello, The Cocoon team. I'd love to bring my little one in for a Children's World experience. They've been a bit overwhelmed lately and I think a gentle, calm space would do them the world of good. Please let me know what's available for their age, and what I should expect. Thank you so much for creating a space that remembers children too.";
+      case "postpartum": return "Hello. I'm not sure how to start this, so I'll just be honest — I've just had a baby and I am running on empty. A friend told me about The Cocoon's Postpartum Suite and I cried a little reading about it. I'd love to book a visit — just to be cared for for once. Please tell me how it works and when I can come. Thank you for this.";
+      case "pets": return "Hello, The Cocoon. My [dog/cat] is honestly due some pampering — I think they feel everything I feel, and if I need rest, they probably do too. I'd love to book them in for a Pets' World session. Could you let me know what's available and what I should bring along? Thank you for thinking of our animals.";
+      case "hair": return "Hello, The Cocoon team. I've been looking for somewhere that truly understands hair — all of it, not just some of it. I'd love to book a Hair Studio appointment. My hair type is [describe yours] and I've been struggling with [what you're experiencing]. Could you recommend a treatment and let me know when you have availability? Really looking forward to being in your hands.";
+      case "grief": return "Hello. This is a message I've been meaning to write for a while. I lost my baby and I haven't really found a space where I could fall apart safely. I read about your grief counselling service for mothers with angel babies and I'd like to come, when I'm ready. Could you tell me more about what a session looks like? I just need to know someone will be gentle with me.";
+      default: return "Hello, The Cocoon. I've been looking at your website and I feel something just reading it — like I've been needing this without knowing what to call it. I'm not sure exactly what I need yet, but I'd love to talk to someone and figure it out. Could you reach out to me? Thank you for building something this beautiful.";
     }
   };
 
@@ -114,6 +115,7 @@ export default function Book() {
                       <SelectItem value="pets">Pets' World</SelectItem>
                       <SelectItem value="hair">Hair Studio</SelectItem>
                       <SelectItem value="postpartum">Postpartum Suite</SelectItem>
+                      <SelectItem value="grief">Angel Baby Grief Counselling</SelectItem>
                       <SelectItem value="sanctuary">Sanctuary Access Only</SelectItem>
                       <SelectItem value="unsure">Unsure / Need Advice</SelectItem>
                     </SelectContent>
@@ -176,10 +178,10 @@ export default function Book() {
               <div className="space-y-3">
                 <Label htmlFor="message" className="text-foreground/80 font-medium text-sm">Message & Accessibility Needs</Label>
                 <Textarea 
+                  key={serviceWorld}
                   id="message" 
                   name="message"
                   defaultValue={getPreFilledMessage()}
-                  placeholder="Tell us how we can make your visit comfortable (e.g., sensory-friendly room, wheelchair access, silent treatment)" 
                   className="rounded-xl border-border bg-card focus:border-primary min-h-[160px] p-4 text-base" 
                 />
               </div>

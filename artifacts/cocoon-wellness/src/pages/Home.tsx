@@ -259,10 +259,16 @@ export default function Home() {
       {/* CTA Band */}
       <section className="bg-primary py-24 text-center">
         <div className="container mx-auto px-6 lg:px-12">
+          <div className="max-w-4xl mx-auto bg-card border border-border p-12 rounded-[3rem] mb-16 shadow-2xl">
+            <h3 className="font-serif text-3xl mb-4 text-foreground">The Cocoon Promise</h3>
+            <p className="text-xl text-foreground/80 font-light italic leading-relaxed">
+              "We promise you will not be rushed. We promise no one will knock if you've asked for silence. We promise your name will be remembered. We promise the tea will always be warm. We promise this — every time, at every branch."
+            </p>
+          </div>
           <h2 className="font-serif text-5xl md:text-6xl text-primary-foreground mb-10">Ready to disappear for a while?</h2>
           <div className="flex flex-col sm:flex-row justify-center gap-6">
             <Button asChild size="lg" className="rounded-full bg-background text-foreground hover:bg-background/90 px-12 py-8 text-xl shadow-xl">
-              <Link href="/book">Book Your Visit</Link>
+              <Link href="/checkout">Book Your Visit</Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="rounded-full border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary px-12 py-8 text-xl">
               <a href="mailto:koredetanimowo2@gmail.com">Enquire Now</a>

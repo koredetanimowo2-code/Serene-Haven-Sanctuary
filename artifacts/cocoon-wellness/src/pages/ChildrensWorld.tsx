@@ -1,15 +1,16 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { motion } from "framer-motion";
+import { AddToCartButton } from "@/components/AddToCartButton";
 
 const services = [
-  { name: "Mini Spa Day", price: "from ₦8,000 / $15 / £12", desc: "Gentle cleanse, mini child-safe facial, and pure relaxation time.", img: "/images/service-kids-1.png" },
-  { name: "Tiny Toes Pedicure", price: "from ₦6,000 / $12 / £9", desc: "Warm foot soak, very gentle massage, and child-safe colourful polish.", img: "/images/service-kids-2.png" },
-  { name: "Little Hands Manicure", price: "from ₦5,000 / $10 / £8", desc: "Nail shaping, gentle care, and fun non-toxic colors.", img: "/images/service-kids-3.png" },
-  { name: "Gentle Back Massage", price: "from ₦9,000 / $18 / £14", desc: "Very light pressure, age-appropriate technique to calm busy nervous systems.", img: "/images/service-kids-4.png" },
-  { name: "Sensory Play & Relaxation", price: "from ₦5,000 / $10 / £8", desc: "Guided relaxation with calming textures, soft sounds, and beautiful visuals.", img: "/images/service-kids-5.png" },
-  { name: "Storytime Spa", price: "from ₦6,000 / $12 / £9", desc: "A beautiful story read aloud while the child receives a gentle hand or foot massage.", img: "/images/service-kids-6.png" },
-  { name: "Calm & Colour Art Therapy", price: "from ₦5,000 / $10 / £8", desc: "Therapeutic art session in a quiet room with a trained gentle facilitator.", img: "/images/service-kids-7.png" }
+  { id: "kids-spa", name: "Mini Spa Day", price: "from ₦8,000 / $15 / £12", priceNaira: 8000, priceUSD: 15, priceGBP: 12, desc: "Gentle cleanse, mini child-safe facial, and pure relaxation time.", img: "/images/child-spa.png" },
+  { id: "kids-pedi", name: "Tiny Toes Pedicure", price: "from ₦6,000 / $12 / £9", priceNaira: 6000, priceUSD: 12, priceGBP: 9, desc: "Warm foot soak, very gentle massage, and child-safe colourful polish.", img: "/images/child-footsoak.png" },
+  { id: "kids-mani", name: "Little Hands Manicure", price: "from ₦5,000 / $10 / £8", priceNaira: 5000, priceUSD: 10, priceGBP: 8, desc: "Nail shaping, gentle care, and fun non-toxic colors.", img: "/images/service-kids.png" },
+  { id: "kids-massage", name: "Gentle Back Massage", price: "from ₦9,000 / $18 / £14", priceNaira: 9000, priceUSD: 18, priceGBP: 14, desc: "Very light pressure, age-appropriate technique to calm busy nervous systems.", img: "/images/service-kids.png" },
+  { id: "kids-sensory", name: "Sensory Play & Relaxation", price: "from ₦5,000 / $10 / £8", priceNaira: 5000, priceUSD: 10, priceGBP: 8, desc: "Guided relaxation with calming textures, soft sounds, and beautiful visuals.", img: "/images/service-kids.png" },
+  { id: "kids-story", name: "Storytime Spa", price: "from ₦6,000 / $12 / £9", priceNaira: 6000, priceUSD: 12, priceGBP: 9, desc: "A beautiful story read aloud while the child receives a gentle hand or foot massage.", img: "/images/child-storytime.png" },
+  { id: "kids-art", name: "Calm & Colour Art Therapy", price: "from ₦5,000 / $10 / £8", priceNaira: 5000, priceUSD: 10, priceGBP: 8, desc: "Therapeutic art session in a quiet room with a trained gentle facilitator.", img: "/images/child-art.png" }
 ];
 
 export default function ChildrensWorld() {
@@ -59,7 +60,7 @@ export default function ChildrensWorld() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {services.map((service, idx) => (
               <motion.div 
-                key={idx}
+                key={service.id}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
@@ -69,14 +70,17 @@ export default function ChildrensWorld() {
                 <div className="aspect-[4/3] rounded-[2rem] overflow-hidden shadow-lg relative">
                   <img src={service.img} alt={service.name} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105" onError={e=>e.currentTarget.src='/images/service-kids.png'} />
                 </div>
-                <div>
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
-                    <h3 className="font-serif text-3xl text-foreground">{service.name}</h3>
-                    <span className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium tracking-wide whitespace-nowrap">
-                      {service.price}
-                    </span>
+                <div className="flex flex-col flex-1 justify-between">
+                  <div>
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
+                      <h3 className="font-serif text-3xl text-foreground">{service.name}</h3>
+                      <span className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium tracking-wide whitespace-nowrap">
+                        {service.price}
+                      </span>
+                    </div>
+                    <p className="text-foreground/70 text-lg font-light leading-relaxed mb-6">{service.desc}</p>
                   </div>
-                  <p className="text-foreground/70 text-lg font-light leading-relaxed">{service.desc}</p>
+                  <AddToCartButton item={{ ...service, world: "Children's World" }} />
                 </div>
               </motion.div>
             ))}

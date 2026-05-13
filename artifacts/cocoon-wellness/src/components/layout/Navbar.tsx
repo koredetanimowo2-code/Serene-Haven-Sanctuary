@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { Link, useLocation } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ChevronDown, Home, Globe, Bed, MapPin, CalendarHeart } from "lucide-react";
+import { Menu, X, ChevronDown, Home, Globe, Bed, MapPin, CalendarHeart, ShoppingBag } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useCart } from "@/lib/cart";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,6 +11,7 @@ export function Navbar() {
   const [worldsOpen, setWorldsOpen] = useState(false);
   const [stayOpen, setStayOpen] = useState(false);
   const [location] = useLocation();
+  const { items } = useCart();
 
   const worldsLinks = [
     { name: "Women's World", href: "/services/women" },
@@ -89,7 +91,12 @@ export function Navbar() {
 
               <Link href="/locations" onClick={() => setMobileMenuOpen(false)} className="block font-serif text-2xl text-foreground">Locations</Link>
             </div>
-            <div className="p-6 shrink-0">
+            <div className="p-6 shrink-0 space-y-4">
+              <Button asChild variant="outline" className="w-full bg-background border-border h-14 text-lg rounded-full">
+                <Link href="/checkout" onClick={() => setMobileMenuOpen(false)}>
+                  My Visit ({items.length})
+                </Link>
+              </Button>
               <Button asChild className="w-full bg-primary text-primary-foreground h-14 text-lg rounded-full">
                 <Link href="/book" onClick={() => setMobileMenuOpen(false)}>Book a Visit</Link>
               </Button>
@@ -172,7 +179,16 @@ export function Navbar() {
           </div>
         </div>
 
-        <div className="px-4 w-[320px]">
+        <div className="px-4 w-[320px] space-y-3">
+          <Button asChild variant="outline" className={`w-full border-border bg-transparent hover:bg-background rounded-xl transition-all duration-300 overflow-hidden ${isOpen ? "h-14 px-4" : "h-12 w-12 px-0 mx-auto rounded-full flex items-center justify-center relative"}`}>
+            <Link href="/checkout" className="flex items-center justify-center gap-3 w-full">
+              <ShoppingBag size={20} className="shrink-0 text-foreground" />
+              {isOpen && <span className="whitespace-nowrap font-medium text-foreground">My Visit ({items.length})</span>}
+              {!isOpen && items.length > 0 && (
+                <span className="absolute top-1 right-1 w-4 h-4 rounded-full bg-primary text-[10px] text-primary-foreground flex items-center justify-center">{items.length}</span>
+              )}
+            </Link>
+          </Button>
           <Button asChild className={`w-full bg-primary text-primary-foreground hover:bg-primary/90 rounded-xl transition-all duration-300 overflow-hidden ${isOpen ? "h-14 px-4" : "h-12 w-12 px-0 mx-auto rounded-full flex items-center justify-center"}`}>
             <Link href="/book" className="flex items-center justify-center gap-3">
               <CalendarHeart size={isOpen ? 20 : 20} className="shrink-0" />

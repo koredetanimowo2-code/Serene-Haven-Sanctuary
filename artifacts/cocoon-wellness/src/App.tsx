@@ -15,7 +15,10 @@ import SanctuarySpaces from "@/pages/SanctuarySpaces";
 import Stay from "@/pages/Stay";
 import Locations from "@/pages/Locations";
 import Book from "@/pages/Book";
+import Checkout from "@/pages/Checkout";
 import NotFound from "@/pages/not-found";
+
+import { CartProvider } from "@/lib/cart";
 
 const queryClient = new QueryClient();
 
@@ -34,6 +37,7 @@ function Router() {
       <Route path="/stay" component={Stay} />
       <Route path="/locations" component={Locations} />
       <Route path="/book" component={Book} />
+      <Route path="/checkout" component={Checkout} />
       <Route component={NotFound} />
     </Switch>
   );
@@ -43,10 +47,12 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
-        <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
-          <Router />
-        </WouterRouter>
-        <Toaster />
+        <CartProvider>
+          <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
+            <Router />
+          </WouterRouter>
+          <Toaster />
+        </CartProvider>
       </TooltipProvider>
     </QueryClientProvider>
   );

@@ -51,13 +51,18 @@ export function Footer() {
 
         </div>
 
-        <div className="pt-8 border-t border-background/10 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="pt-8 border-t border-background/10 flex flex-col items-center justify-between gap-6 text-center">
           <p className="text-background/60 text-sm font-medium tracking-wide">
             Born in Nigeria. Felt worldwide.
           </p>
-          <p className="text-background/40 text-xs italic font-serif text-center">
-            "Come to me, all you who are weary and burdened, and I will give you rest. — Matthew 11:28"
-          </p>
+          <div className="space-y-2">
+            <p className="text-background/40 text-xs italic font-serif">
+              "Come to me, all you who are weary and burdened, and I will give you rest. — Matthew 11:28"
+            </p>
+            <p className="text-background/50 text-xs font-light tracking-wide">
+              The Cocoon is a judgment-free space. Whatever you're carrying, you don't have to carry it alone.
+            </p>
+          </div>
         </div>
       </div>
     </footer>
