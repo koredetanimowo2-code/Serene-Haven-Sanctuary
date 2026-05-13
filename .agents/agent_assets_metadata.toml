@@ -5,40 +5,58 @@ outputs = []
 id = "ZCXWMuVmS3hfoY_l-PdXN"
 uri = "file://artifacts/cocoon-wellness/public/images/hero.png"
 type = "image"
-title = "Serene African spa sanctuary"
+title = "Hero image for wellness sanctuary"
 
 [[generated]]
 id = "fpBOmjDAo7tNNd7wqQAAO"
 uri = "file://artifacts/cocoon-wellness/public/images/hair-studio.png"
 type = "image"
-title = "Natural African hair celebration"
+title = "Hair studio"
 
 [[generated]]
 id = "cYH5OrmMiTK_xYiwktacV"
 uri = "file://artifacts/cocoon-wellness/public/images/service-women.png"
 type = "image"
-title = "Women's relaxing massage"
+title = "Womens world spa"
 
 [[generated]]
 id = "IHo8yz8mFJl4dHvIMNFNU"
 uri = "file://artifacts/cocoon-wellness/public/images/service-men.png"
 type = "image"
-title = "Men's grooming and massage"
+title = "Mens world spa"
 
 [[generated]]
 id = "QSXGacbErnb7IUEj-VPS3"
 uri = "file://artifacts/cocoon-wellness/public/images/service-kids.png"
 type = "image"
-title = "Gentle children's spa"
+title = "Childrens world spa"
 
 [[generated]]
 id = "IgsMnnFi1_do0uMOg0mDC"
 uri = "file://artifacts/cocoon-wellness/public/images/service-pets.png"
 type = "image"
-title = "Luxury pet spa treatment"
+title = "Pets world spa"
 
 [[generated]]
 id = "UzMUvXO-_9Vi7ejHud-vM"
 uri = "file://artifacts/cocoon-wellness/public/images/philosophy.png"
 type = "image"
-title = "Warm terracotta textures"
+title = "Philosophy image"
+
+[[generated]]
+id = "vu0e5uZtevFAVaQzhvb8U"
+uri = "file://artifacts/cocoon-wellness/public/images/sanctuary.png"
+type = "image"
+title = "Sanctuary spaces"
+
+[[generated]]
+id = "nNvfIynqw7xiq-QksnGp8"
+uri = "file://artifacts/cocoon-wellness/public/images/stay-standard.png"
+type = "image"
+title = "Stay package standard"
+
+[[generated]]
+id = "vUvofj1FTmeUscTDJNWO8"
+uri = "file://artifacts/cocoon-wellness/public/images/stay-vip.png"
+type = "image"
+title = "Stay package VIP"

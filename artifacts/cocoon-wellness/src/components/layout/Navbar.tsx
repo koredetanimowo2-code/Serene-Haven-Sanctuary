@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link } from "wouter";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import { Menu, X } from "lucide-react";
@@ -14,10 +14,10 @@ export function Navbar() {
   });
 
   const navLinks = [
-    { name: "Services", href: "#services" },
-    { name: "Hair Studio", href: "#hair-studio" },
-    { name: "Locations", href: "#locations" },
-    { name: "Philosophy", href: "#philosophy" },
+    { name: "Home", href: "/" },
+    { name: "Our Worlds", href: "/services" },
+    { name: "Stay With Us", href: "/stay" },
+    { name: "Locations", href: "/locations" },
   ];
 
   return (
@@ -41,17 +41,17 @@ export function Navbar() {
           <ul className="flex items-center gap-8">
             {navLinks.map((link) => (
               <li key={link.name}>
-                <a
+                <Link
                   href={link.href}
                   className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors uppercase tracking-wider"
                 >
                   {link.name}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
           <Button asChild size="lg" className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-all shadow-md hover:shadow-lg">
-            <a href="#book">Book a Visit</a>
+            <Link href="/book">Book a Visit</Link>
           </Button>
         </nav>
 
@@ -67,7 +67,7 @@ export function Navbar() {
 
       {/* Mobile Menu */}
       <motion.div
-        className="fixed inset-0 bg-background z-0 md:hidden flex flex-col justify-center items-center gap-8"
+        className="fixed inset-0 bg-background z-40 md:hidden flex flex-col justify-center items-center gap-8"
         initial={{ opacity: 0, clipPath: "circle(0% at top right)" }}
         animate={{
           opacity: mobileMenuOpen ? 1 : 0,
@@ -76,21 +76,21 @@ export function Navbar() {
         transition={{ duration: 0.5, ease: "easeInOut" }}
         style={{ pointerEvents: mobileMenuOpen ? "auto" : "none" }}
       >
-        <ul className="flex flex-col items-center gap-6">
+        <ul className="flex flex-col items-center gap-6 mt-16">
           {navLinks.map((link) => (
             <li key={link.name}>
-              <a
+              <Link
                 href={link.href}
                 className="font-serif text-3xl text-foreground hover:text-primary transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {link.name}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
         <Button asChild size="lg" className="mt-4 rounded-full w-48 bg-primary">
-          <a href="#book" onClick={() => setMobileMenuOpen(false)}>Book a Visit</a>
+          <Link href="/book" onClick={() => setMobileMenuOpen(false)}>Book a Visit</Link>
         </Button>
       </motion.div>
     </motion.header>
