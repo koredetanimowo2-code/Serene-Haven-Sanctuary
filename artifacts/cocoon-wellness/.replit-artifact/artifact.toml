@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "Cocoon Wellness"
+version = "1.0.0"
+id = "artifacts/cocoon-wellness"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 21234
+
+[services.development]
+run = "pnpm --filter @workspace/cocoon-wellness run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/cocoon-wellness", "run", "build" ]
+publicDir = "artifacts/cocoon-wellness/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "21234"
+BASE_PATH = "/"

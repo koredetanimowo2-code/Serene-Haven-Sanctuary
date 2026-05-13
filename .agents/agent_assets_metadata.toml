@@ -1,0 +1,44 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "ZCXWMuVmS3hfoY_l-PdXN"
+uri = "file://artifacts/cocoon-wellness/public/images/hero.png"
+type = "image"
+title = "Serene African spa sanctuary"
+
+[[generated]]
+id = "fpBOmjDAo7tNNd7wqQAAO"
+uri = "file://artifacts/cocoon-wellness/public/images/hair-studio.png"
+type = "image"
+title = "Natural African hair celebration"
+
+[[generated]]
+id = "cYH5OrmMiTK_xYiwktacV"
+uri = "file://artifacts/cocoon-wellness/public/images/service-women.png"
+type = "image"
+title = "Women's relaxing massage"
+
+[[generated]]
+id = "IHo8yz8mFJl4dHvIMNFNU"
+uri = "file://artifacts/cocoon-wellness/public/images/service-men.png"
+type = "image"
+title = "Men's grooming and massage"
+
+[[generated]]
+id = "QSXGacbErnb7IUEj-VPS3"
+uri = "file://artifacts/cocoon-wellness/public/images/service-kids.png"
+type = "image"
+title = "Gentle children's spa"
+
+[[generated]]
+id = "IgsMnnFi1_do0uMOg0mDC"
+uri = "file://artifacts/cocoon-wellness/public/images/service-pets.png"
+type = "image"
+title = "Luxury pet spa treatment"
+
+[[generated]]
+id = "UzMUvXO-_9Vi7ejHud-vM"
+uri = "file://artifacts/cocoon-wellness/public/images/philosophy.png"
+type = "image"
+title = "Warm terracotta textures"
