@@ -120,3 +120,111 @@ id = "yFyeSSbOy7OsgdTCJDHWa"
 uri = "file://artifacts/cocoon-wellness/public/images/pet-dog-bath.png"
 type = "image"
 title = "small dog warm spa bath"
+
+[[generated]]
+id = "WoUEO3yzo6M7dOfwx6Byn"
+uri = "file://artifacts/cocoon-wellness/public/images/sanctuary-pool.png"
+type = "image"
+title = "serene indoor pool night"
+
+[[generated]]
+id = "rCUhPtFuo1Of7cl9MSQeo"
+uri = "file://artifacts/cocoon-wellness/public/images/sanctuary-reading.png"
+type = "image"
+title = "cosy dark reading corner"
+
+[[generated]]
+id = "-1yvuO3fmpKM3vQMg4kHE"
+uri = "file://artifacts/cocoon-wellness/public/images/sanctuary-dark.png"
+type = "image"
+title = "dark rest room"
+
+[[generated]]
+id = "SYNQD-RBg5P-xbENZDj58"
+uri = "file://artifacts/cocoon-wellness/public/images/sanctuary-prayer.png"
+type = "image"
+title = "Intimate spiritual prayer room"
+
+[[generated]]
+id = "HnxaXpgMd3_wc9yBj8QKK"
+uri = "file://artifacts/cocoon-wellness/public/images/sanctuary-simulator.png"
+type = "image"
+title = "Immersive sensory simulator room"
+
+[[generated]]
+id = "dw3rvf_mRxpvHMkOQCmdM"
+uri = "file://artifacts/cocoon-wellness/public/images/sanctuary-sleep.png"
+type = "image"
+title = "Soundproofed sleep room"
+
+[[generated]]
+id = "HWtpXEBy6SDZ4ycE4k4eW"
+uri = "file://artifacts/cocoon-wellness/public/images/sanctuary-nature.png"
+type = "image"
+title = "Private nature walk path"
+
+[[generated]]
+id = "oWT01UfWBRHJRRDfpUl-V"
+uri = "file://artifacts/cocoon-wellness/public/images/sanctuary-autism.png"
+type = "image"
+title = "Autism friendly sensory room"
+
+[[generated]]
+id = "BRyz84cqAPKFMkSuWdrCX"
+uri = "file://artifacts/cocoon-wellness/public/images/sanctuary-dining.png"
+type = "image"
+title = "Quiet dining room"
+
+[[generated]]
+id = "9RV24jTm59ZJp_N0rdz97"
+uri = "file://artifacts/cocoon-wellness/public/images/loc-lagos.png"
+type = "image"
+title = "Lagos wellness sanctuary"
+
+[[generated]]
+id = "ZhkcbHW8VHi9NEOEJ5abX"
+uri = "file://attached_assets/generated_images/interior_of_a_cosy_ee05.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "EuH62CJ5BcFeZAsSGzbgK"
+uri = "file://artifacts/cocoon-wellness/public/images/loc-london.png"
+type = "image"
+title = "intimate London spa sanctuary"
+
+[[generated]]
+id = "c1QWiQpoFTHa4xvvzMJqE"
+uri = "file://artifacts/cocoon-wellness/public/images/loc-newyork.png"
+type = "image"
+title = "moody New York spa"
+
+[[generated]]
+id = "S1U12OXr4Dx0FcHg9kn3U"
+uri = "file://artifacts/cocoon-wellness/public/images/loc-toronto.png"
+type = "image"
+title = "warm Toronto spa interior"
+
+[[generated]]
+id = "wRuuHCmOWK7-LW-ijR4cc"
+uri = "file://artifacts/cocoon-wellness/public/images/loc-dubai.png"
+type = "image"
+title = "luxurious Dubai spa interior"
+
+[[generated]]
+id = "Su8KtcSp5G3mCwZzLCjAz"
+uri = "file://artifacts/cocoon-wellness/public/images/loc-johannesburg.png"
+type = "image"
+title = "warm Johannesburg spa interior"
+
+[[generated]]
+id = "Urb8u7V7aJ-PS89st3IXT"
+uri = "file://artifacts/cocoon-wellness/public/images/loc-paris.png"
+type = "image"
+title = "intimate Parisian spa interior"
+
+[[generated]]
+id = "TJMICh5Z7Wdx0JEJT6S8a"
+uri = "file://artifacts/cocoon-wellness/public/images/stay-exclusive.png"
+type = "image"
+title = "private intimate suite"

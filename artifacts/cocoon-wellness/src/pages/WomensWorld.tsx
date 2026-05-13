@@ -3,6 +3,7 @@ import { Footer } from "@/components/layout/Footer";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { AddToCartButton } from "@/components/AddToCartButton";
+import { BackNav } from "@/components/layout/BackNav";
 
 const services = [
   { id: "women-massage", name: "Signature Full Body Massage", price: "from ₦25,000 / $45 / £35", priceNaira: 25000, priceUSD: 45, priceGBP: 35, desc: "Deep tissue relief, hot towels, custom aromatherapy oils.", img: "/images/service-women.png" },
@@ -16,8 +17,9 @@ const services = [
 
 export default function WomensWorld() {
   return (
-    <div className="min-h-screen bg-background md:pl-20">
+    <div className="min-h-screen bg-background md:pl-20 pt-0 pb-20 md:pb-0">
       <Navbar />
+      <BackNav />
       
       {/* Hero */}
       <section className="relative h-[80vh] flex items-end pb-24">

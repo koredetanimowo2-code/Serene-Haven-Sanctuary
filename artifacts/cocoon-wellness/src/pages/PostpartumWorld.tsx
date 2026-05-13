@@ -3,6 +3,7 @@ import { Footer } from "@/components/layout/Footer";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { AddToCartButton } from "@/components/AddToCartButton";
+import { BackNav } from "@/components/layout/BackNav";
 
 const services = [
   { id: "postpartum-massage", name: "Postpartum Massage", price: "from ₦30,000 / $58 / £46", priceNaira: 30000, priceUSD: 58, priceGBP: 46, desc: "Gentle, specialist technique. Safe for new mothers. Addresses sore back from nursing, tight shoulders, and swollen feet.", img: "/images/postpartum-massage.png" },
@@ -18,8 +19,9 @@ const services = [
 
 export default function PostpartumWorld() {
   return (
-    <div className="min-h-screen bg-background md:pl-20">
+    <div className="min-h-screen bg-background md:pl-20 pt-0 pb-20 md:pb-0">
       <Navbar />
+      <BackNav />
       
       <section className="relative h-[90vh] flex items-center justify-center text-center">
         <img src="/images/postpartum.png" alt="Postpartum Suite" className="absolute inset-0 w-full h-full object-cover" onError={e=>e.currentTarget.src='/images/hero.png'} />

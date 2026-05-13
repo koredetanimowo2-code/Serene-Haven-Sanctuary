@@ -3,6 +3,7 @@ import { Footer } from "@/components/layout/Footer";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
+import { BackNav } from "@/components/layout/BackNav";
 
 const locations = [
   {
@@ -58,9 +59,10 @@ const locations = [
 
 export default function Locations() {
   return (
-    <div className="min-h-screen bg-background md:pl-20">
+    <div className="min-h-screen bg-background md:pl-20 pt-0 pb-20 md:pb-0">
       <Navbar />
-      <div className="pt-32 pb-32">
+      <BackNav />
+      <div className="pt-16 md:pt-32 pb-32">
         <div className="container mx-auto px-6 lg:px-12 text-center mb-24">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}

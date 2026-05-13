@@ -2,6 +2,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
+import { BackNav } from "@/components/layout/BackNav";
 
 export default function Services() {
   const worlds = [
@@ -15,9 +16,10 @@ export default function Services() {
   ];
 
   return (
-    <div className="min-h-screen bg-background md:pl-20">
+    <div className="min-h-screen bg-background md:pl-20 pt-0 pb-20 md:pb-0">
       <Navbar />
-      <div className="pt-32 pb-32">
+      <BackNav />
+      <div className="pt-16 md:pt-32 pb-32">
         <div className="container mx-auto px-6 lg:px-12">
           
           <motion.div 

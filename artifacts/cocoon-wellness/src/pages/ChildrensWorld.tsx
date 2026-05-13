@@ -2,6 +2,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { motion } from "framer-motion";
 import { AddToCartButton } from "@/components/AddToCartButton";
+import { BackNav } from "@/components/layout/BackNav";
 
 const services = [
   { id: "kids-spa", name: "Mini Spa Day", price: "from ₦8,000 / $15 / £12", priceNaira: 8000, priceUSD: 15, priceGBP: 12, desc: "Gentle cleanse, mini child-safe facial, and pure relaxation time.", img: "/images/child-spa.png" },
@@ -15,8 +16,9 @@ const services = [
 
 export default function ChildrensWorld() {
   return (
-    <div className="min-h-screen bg-background md:pl-20">
+    <div className="min-h-screen bg-background md:pl-20 pt-0 pb-20 md:pb-0">
       <Navbar />
+      <BackNav />
       
       <section className="relative h-[80vh] flex items-end pb-24">
         <img src="/images/service-kids.png" alt="Children's World" className="absolute inset-0 w-full h-full object-cover" onError={e=>e.currentTarget.src='/images/hero.png'} />

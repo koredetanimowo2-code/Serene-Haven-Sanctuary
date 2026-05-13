@@ -8,6 +8,7 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Trash2 } from "lucide-react";
 import { useCart } from "@/lib/cart";
+import { BackNav } from "@/components/layout/BackNav";
 
 export default function Checkout() {
   const { items, removeFromCart } = useCart();
@@ -31,9 +32,10 @@ export default function Checkout() {
   }, [items]);
 
   return (
-    <div className="min-h-screen bg-background flex flex-col md:pl-20">
+    <div className="min-h-screen bg-background flex flex-col md:pl-20 pt-0 pb-20 md:pb-0">
       <Navbar />
-      <div className="container mx-auto px-6 lg:px-12 py-32 flex-1">
+      <BackNav />
+      <div className="container mx-auto px-6 lg:px-12 py-16 md:py-32 flex-1">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
