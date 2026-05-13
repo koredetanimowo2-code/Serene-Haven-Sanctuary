@@ -3,51 +3,73 @@ import { Footer } from "@/components/layout/Footer";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
+import { Check } from "lucide-react";
 
 export default function Stay() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background md:pl-20">
       <Navbar />
-      <div className="pt-32 pb-24">
-        <div className="container mx-auto px-6">
+      <div className="pt-32 pb-32">
+        <div className="container mx-auto px-6 lg:px-12">
+          
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center max-w-3xl mx-auto mb-20"
+            className="text-center max-w-4xl mx-auto mb-24"
           >
-            <h1 className="font-serif text-5xl md:text-6xl text-foreground mb-6">Don't Just Visit. Stay.</h1>
-            <p className="text-lg text-foreground/80 italic mb-4">Why rush restoration?</p>
-            <p className="text-foreground/70">Our multi-day stays let you go deeper. Wake up inside the Cocoon. Step into your treatments. Sleep in silence. Leave transformed.</p>
+            <h1 className="font-serif text-6xl md:text-7xl text-foreground mb-8">Don't Just Visit. Stay.</h1>
+            <p className="text-2xl text-foreground/80 italic font-serif mb-8">Why rush restoration?</p>
+            <p className="text-lg text-foreground/70 font-light leading-relaxed">
+              Our multi-day stays let you go deeper. Wake up inside the Cocoon. Step directly into your treatments. Sleep in absolute silence. Leave completely transformed.
+            </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="bg-card border border-border p-12 md:p-16 rounded-[3rem] mb-24 text-center max-w-5xl mx-auto shadow-lg"
+          >
+            <h2 className="font-serif text-4xl text-primary mb-6">Phone-Free Meals</h2>
+            <p className="text-xl text-foreground/80 font-light leading-relaxed">
+              Twice a day, we sit together without screens. Breakfast and dinner are served in the quiet dining room — no phones, just food, warmth, and real conversation. Or, if you prefer, eat alone in your room with nothing but the sound of birds.
+            </p>
+          </motion.div>
+
+          <div className="space-y-24 mb-32">
             {/* Standard Stay */}
             <motion.div 
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="bg-card rounded-2xl overflow-hidden shadow-sm"
+              className="flex flex-col lg:flex-row gap-12 items-center"
             >
-              <img src="/images/stay-standard.png" alt="Standard Stay" className="w-full h-64 object-cover" />
-              <div className="p-8">
-                <h3 className="font-serif text-2xl text-primary mb-4">Standard Stay</h3>
-                <ul className="space-y-4 mb-8 text-sm">
-                  <li className="flex justify-between items-start border-b border-border pb-2">
-                    <span className="font-medium">3 Days</span>
-                    <span className="text-right"><span className="block text-primary">from $250 / £200 / ₦130,000</span><span className="text-xs text-foreground/60">Room, daily treatment (1/day), pool, breakfast</span></span>
-                  </li>
-                  <li className="flex justify-between items-start border-b border-border pb-2">
-                    <span className="font-medium">5 Days</span>
-                    <span className="text-right"><span className="block text-primary">from $380 / £300 / ₦195,000</span><span className="text-xs text-foreground/60">Same + extra treatments, therapist session</span></span>
-                  </li>
-                  <li className="flex justify-between items-start">
-                    <span className="font-medium">7 Days</span>
-                    <span className="text-right"><span className="block text-primary">from $500 / £400 / ₦260,000</span><span className="text-xs text-foreground/60">Full immersion — full access</span></span>
-                  </li>
-                </ul>
-                <Button asChild className="w-full rounded-full bg-primary" data-testid="book-standard">
+              <div className="lg:w-1/2 w-full">
+                <div className="aspect-[4/3] rounded-[2rem] overflow-hidden shadow-2xl relative">
+                  <img src="/images/stay-standard.png" alt="Standard Stay" className="absolute inset-0 w-full h-full object-cover" />
+                  <div className="absolute inset-0 bg-primary/10 mix-blend-overlay" />
+                </div>
+              </div>
+              <div className="lg:w-1/2 w-full">
+                <h3 className="font-serif text-5xl text-foreground mb-4">Standard Stay</h3>
+                <p className="text-foreground/70 text-lg mb-8 font-light">A beautifully lit, homey bedroom. Warm rugs, books, plants, earth tones. Not a hotel room — a sanctuary.</p>
+                
+                <div className="space-y-6 mb-10">
+                  <div className="p-6 bg-card rounded-2xl border border-border">
+                    <div className="flex justify-between items-center mb-2"><h4 className="font-serif text-2xl">3 Days</h4><span className="text-primary font-medium">from ₦130,000 / $250 / £200</span></div>
+                    <p className="text-foreground/60 text-sm">Room + 1 daily treatment + pool + reading room + breakfast</p>
+                  </div>
+                  <div className="p-6 bg-card rounded-2xl border border-border">
+                    <div className="flex justify-between items-center mb-2"><h4 className="font-serif text-2xl">5 Days</h4><span className="text-primary font-medium">from ₦195,000 / $380 / £300</span></div>
+                    <p className="text-foreground/60 text-sm">+ Extra treatments + therapist session + nature walk</p>
+                  </div>
+                  <div className="p-6 bg-card rounded-2xl border border-border bg-primary/5 border-primary/20">
+                    <div className="flex justify-between items-center mb-2"><h4 className="font-serif text-2xl">7 Days</h4><span className="text-primary font-medium">from ₦260,000 / $500 / £400</span></div>
+                    <p className="text-foreground/60 text-sm">Full immersion — daily treatments + hair studio + therapist + nature walk + full access</p>
+                  </div>
+                </div>
+                <Button asChild size="lg" className="w-full sm:w-auto rounded-full bg-primary h-14 px-10 text-lg">
                   <Link href="/book">Book Standard Stay</Link>
                 </Button>
               </div>
@@ -55,31 +77,36 @@ export default function Stay() {
 
             {/* VIP Suite */}
             <motion.div 
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="bg-card rounded-2xl overflow-hidden shadow-sm border border-secondary/20 relative"
+              className="flex flex-col lg:flex-row-reverse gap-12 items-center"
             >
-              <div className="absolute top-4 right-4 bg-secondary text-secondary-foreground text-xs font-bold px-3 py-1 rounded-full z-10">Popular</div>
-              <img src="/images/stay-vip.png" alt="VIP Suite" className="w-full h-64 object-cover" />
-              <div className="p-8">
-                <h3 className="font-serif text-2xl text-primary mb-4">VIP Suite</h3>
-                <ul className="space-y-4 mb-8 text-sm">
-                  <li className="flex justify-between items-start border-b border-border pb-2">
-                    <span className="font-medium">3 Days</span>
-                    <span className="text-right"><span className="block text-primary">from $480 / £380 / ₦250,000</span><span className="text-xs text-foreground/60">Private suite, dedicated attendant</span></span>
-                  </li>
-                  <li className="flex justify-between items-start border-b border-border pb-2">
-                    <span className="font-medium">5 Days</span>
-                    <span className="text-right"><span className="block text-primary">from $720 / £580 / ₦375,000</span><span className="text-xs text-foreground/60">Private pool access slots, exclusive menu</span></span>
-                  </li>
-                  <li className="flex justify-between items-start">
-                    <span className="font-medium">7 Days</span>
-                    <span className="text-right"><span className="block text-primary">from $950 / £760 / ₦495,000</span><span className="text-xs text-foreground/60">Total immersion, private therapist, concierge</span></span>
-                  </li>
-                </ul>
-                <Button asChild className="w-full rounded-full bg-primary" data-testid="book-vip">
+              <div className="lg:w-1/2 w-full">
+                <div className="aspect-[4/3] rounded-[2rem] overflow-hidden shadow-2xl relative">
+                  <img src="/images/stay-vip.png" alt="VIP Suite" className="absolute inset-0 w-full h-full object-cover" />
+                  <div className="absolute inset-0 bg-secondary/20 mix-blend-overlay" />
+                </div>
+              </div>
+              <div className="lg:w-1/2 w-full">
+                <h3 className="font-serif text-5xl text-foreground mb-4">VIP Suite</h3>
+                <p className="text-foreground/70 text-lg mb-8 font-light">A more luxurious but deeply homey suite. Rich textures, warm light, expansive space to breathe.</p>
+                
+                <div className="space-y-6 mb-10">
+                  <div className="p-6 bg-card rounded-2xl border border-border">
+                    <div className="flex justify-between items-center mb-2"><h4 className="font-serif text-2xl">3 Days</h4><span className="text-primary font-medium">from ₦250,000 / $480 / £380</span></div>
+                    <p className="text-foreground/60 text-sm">Private suite + attendant + premium treatments + champagne welcome</p>
+                  </div>
+                  <div className="p-6 bg-card rounded-2xl border border-border">
+                    <div className="flex justify-between items-center mb-2"><h4 className="font-serif text-2xl">5 Days</h4><span className="text-primary font-medium">from ₦375,000 / $720 / £580</span></div>
+                    <p className="text-foreground/60 text-sm">+ Private pool slots + exclusive menu</p>
+                  </div>
+                  <div className="p-6 bg-card rounded-2xl border border-border bg-primary/5 border-primary/20">
+                    <div className="flex justify-between items-center mb-2"><h4 className="font-serif text-2xl">7 Days</h4><span className="text-primary font-medium">from ₦495,000 / $950 / £760</span></div>
+                    <p className="text-foreground/60 text-sm">Total immersion + private therapist + Hair Studio + concierge</p>
+                  </div>
+                </div>
+                <Button asChild size="lg" className="w-full sm:w-auto rounded-full bg-primary h-14 px-10 text-lg">
                   <Link href="/book">Book VIP Suite</Link>
                 </Button>
               </div>
@@ -87,63 +114,69 @@ export default function Stay() {
 
             {/* Exclusive Suite */}
             <motion.div 
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="bg-card rounded-2xl overflow-hidden shadow-sm"
+              className="flex flex-col lg:flex-row gap-12 items-center"
             >
-              <img src="/images/stay-vip.png" alt="Exclusive Suite" className="w-full h-64 object-cover" />
-              <div className="p-8">
-                <h3 className="font-serif text-2xl text-primary mb-4">Exclusive Suite</h3>
-                <p className="text-xs text-foreground/60 mb-4 italic">For complete privacy — no shared spaces</p>
-                <ul className="space-y-4 mb-8 text-sm">
-                  <li className="flex justify-between items-start border-b border-border pb-2">
-                    <span className="font-medium">3 Days</span>
-                    <span className="text-right"><span className="block text-primary">from $800 / £640 / ₦415,000</span><span className="text-xs text-foreground/60">Entirely private wing, meals in suite</span></span>
-                  </li>
-                  <li className="flex justify-between items-start border-b border-border pb-2">
-                    <span className="font-medium">5 Days</span>
-                    <span className="text-right"><span className="block text-primary">from $1,200 / £960 / ₦625,000</span><span className="text-xs text-foreground/60">Full private experience, private pool</span></span>
-                  </li>
-                  <li className="flex justify-between items-start">
-                    <span className="font-medium">7 Days</span>
-                    <span className="text-right"><span className="block text-primary">from $1,600 / £1,280 / ₦830,000</span><span className="text-xs text-foreground/60">The fullest expression — completely yours</span></span>
-                  </li>
-                </ul>
-                <Button asChild className="w-full rounded-full bg-primary" data-testid="book-exclusive">
+              <div className="lg:w-1/2 w-full">
+                <div className="aspect-[4/3] rounded-[2rem] overflow-hidden shadow-2xl relative">
+                  <img src="/images/stay-exclusive.png" alt="Exclusive Suite" className="absolute inset-0 w-full h-full object-cover" onError={(e) => e.currentTarget.src='/images/stay-vip.png'} />
+                  <div className="absolute inset-0 bg-background/10 mix-blend-overlay" />
+                </div>
+              </div>
+              <div className="lg:w-1/2 w-full">
+                <h3 className="font-serif text-5xl text-foreground mb-4">Exclusive Suite</h3>
+                <p className="text-foreground/70 text-lg mb-8 font-light">The most private, intimate suite. Deeply warm, entirely self-contained. A true private sanctuary.</p>
+                
+                <div className="space-y-6 mb-10">
+                  <div className="p-6 bg-card rounded-2xl border border-border">
+                    <div className="flex justify-between items-center mb-2"><h4 className="font-serif text-2xl">3 Days</h4><span className="text-primary font-medium">from ₦415,000 / $800 / £640</span></div>
+                    <p className="text-foreground/60 text-sm">Private wing + private entrance + dedicated team + in-suite meals</p>
+                  </div>
+                  <div className="p-6 bg-card rounded-2xl border border-border">
+                    <div className="flex justify-between items-center mb-2"><h4 className="font-serif text-2xl">5 Days</h4><span className="text-primary font-medium">from ₦625,000 / $1,200 / £960</span></div>
+                    <p className="text-foreground/60 text-sm">+ Private pool daily</p>
+                  </div>
+                  <div className="p-6 bg-card rounded-2xl border border-border bg-primary/5 border-primary/20">
+                    <div className="flex justify-between items-center mb-2"><h4 className="font-serif text-2xl">7 Days</h4><span className="text-primary font-medium">from ₦830,000 / $1,600 / £1,280</span></div>
+                    <p className="text-foreground/60 text-sm">Completely yours. Total privacy. Perfect silence.</p>
+                  </div>
+                </div>
+                <Button asChild size="lg" className="w-full sm:w-auto rounded-full bg-primary h-14 px-10 text-lg">
                   <Link href="/book">Book Exclusive Suite</Link>
                 </Button>
               </div>
             </motion.div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className="font-serif text-3xl mb-6 text-foreground">Room Features</h2>
-              <p className="text-foreground/70 mb-8">Every room in The Cocoon is designed to insulate you from the noise of the world. Expect nothing less than perfect quiet and deep rest.</p>
-              <div className="grid grid-cols-2 gap-4">
-                {["Fully Soundproofed", "Blackout Curtains", "Climate Control", "Premium Linen", "Private Bathroom", "In-Room Refreshments"].map(feature => (
-                  <div key={feature} className="flex items-center gap-2">
-                    <div className="w-2 h-2 rounded-full bg-secondary" />
-                    <span className="text-foreground/80">{feature}</span>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start border-t border-border pt-24">
+            <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
+              <h2 className="font-serif text-4xl mb-8 text-foreground">Room Features</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                {["Fully Soundproofed", "Blackout Curtains", "Climate Control", "Premium Linen", "Private Bathroom", "In-Room Refreshments", "No-Knock Hours"].map(feature => (
+                  <div key={feature} className="flex items-center gap-3 bg-card p-4 rounded-xl border border-border">
+                    <div className="w-2 h-2 rounded-full bg-primary shrink-0" />
+                    <span className="text-foreground/90 font-medium">{feature}</span>
                   </div>
                 ))}
               </div>
-            </div>
-            <div className="bg-primary/5 p-10 rounded-3xl">
-              <h2 className="font-serif text-3xl mb-6 text-primary">Accessibility</h2>
-              <p className="text-foreground/80 italic mb-6">"We built The Cocoon for every body. Your access needs are not an afterthought — they are part of the design."</p>
-              <ul className="space-y-3 text-foreground/70">
-                <li>• Wheelchair accessible throughout all buildings</li>
-                <li>• Braille menus and signage</li>
-                <li>• Sign language staff on request</li>
-                <li>• Visual alarm systems for deaf guests</li>
-                <li>• Sensory-friendly rooms available</li>
-                <li>• Trained staff for all accessibility needs</li>
+            </motion.div>
+
+            <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="bg-secondary p-12 rounded-[2.5rem] text-secondary-foreground shadow-xl">
+              <h2 className="font-serif text-4xl mb-6">Accessibility</h2>
+              <p className="text-secondary-foreground/90 italic mb-8 font-light text-xl">"We built The Cocoon for every body. Your access needs are not an afterthought — they are part of the design."</p>
+              <ul className="space-y-4 text-secondary-foreground/80">
+                <li className="flex gap-3"><Check className="text-primary" /> Wheelchair accessible throughout all buildings</li>
+                <li className="flex gap-3"><Check className="text-primary" /> Braille menus and signage</li>
+                <li className="flex gap-3"><Check className="text-primary" /> Sign language staff on request</li>
+                <li className="flex gap-3"><Check className="text-primary" /> Visual alarm systems for deaf guests</li>
+                <li className="flex gap-3"><Check className="text-primary" /> Sensory-friendly rooms available</li>
+                <li className="flex gap-3"><Check className="text-primary" /> Trained staff for all accessibility needs</li>
               </ul>
-            </div>
+            </motion.div>
           </div>
+
         </div>
       </div>
       <Footer />
