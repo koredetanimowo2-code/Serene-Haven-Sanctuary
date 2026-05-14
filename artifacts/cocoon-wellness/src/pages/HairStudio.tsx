@@ -2,7 +2,6 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { motion } from "framer-motion";
 import { AddToCartButton } from "@/components/AddToCartButton";
-import { BackNav } from "@/components/layout/BackNav";
 
 const services = [
   { id: "hair-natural", name: "Natural & Coily", price: "from ₦18,000 / $35 / £28", priceNaira: 18000, priceUSD: 35, priceGBP: 28, desc: "Deep treatments, moisture, definition for 4C, 4B, and kinky hair.", img: "/images/hair-coils.png" },
@@ -17,9 +16,8 @@ const services = [
 
 export default function HairStudio() {
   return (
-    <div className="min-h-screen bg-background md:pl-20 pt-0 pb-20 md:pb-0">
+    <div className="min-h-screen bg-background md:pl-20">
       <Navbar />
-      <BackNav />
       
       <section className="relative h-[80vh] flex items-end pb-24">
         <img src="/images/hair-studio.png" alt="Hair Studio" className="absolute inset-0 w-full h-full object-cover" onError={e=>e.currentTarget.src='/images/hero.png'} />

@@ -4,14 +4,12 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { Check } from "lucide-react";
-import { BackNav } from "@/components/layout/BackNav";
 
 export default function Stay() {
   return (
-    <div className="min-h-screen bg-background md:pl-20 pt-0 pb-20 md:pb-0">
+    <div className="min-h-screen bg-background md:pl-20">
       <Navbar />
-      <BackNav />
-      <div className="pt-16 md:pt-32 pb-32">
+      <div className="pt-32 pb-32">
         <div className="container mx-auto px-6 lg:px-12">
           
           <motion.div 
@@ -155,49 +153,6 @@ export default function Stay() {
               </div>
             </motion.div>
           </div>
-
-          <motion.div 
-            id="sip-and-paint"
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="flex flex-col lg:flex-row gap-12 items-center mb-32 pt-16 border-t border-border"
-          >
-            <div className="lg:w-1/2 w-full">
-              <div className="aspect-[4/3] rounded-[2rem] overflow-hidden shadow-2xl relative">
-                <img src="/images/sip-paint.png" alt="Sip & Paint" className="absolute inset-0 w-full h-full object-cover" onError={(e) => e.currentTarget.src='/images/stay-standard.png'} />
-                <div className="absolute inset-0 bg-primary/10 mix-blend-overlay" />
-              </div>
-            </div>
-            <div className="lg:w-1/2 w-full">
-              <h3 className="font-serif text-5xl text-foreground mb-4">Sip & Paint</h3>
-              <p className="text-primary text-xl mb-8 font-medium">Complimentary for all stay guests. Available to walk-in guests at a fee.</p>
-              
-              <div className="space-y-4 text-foreground/80 font-light leading-relaxed mb-10 text-lg">
-                <p>A curated creative evening. You are guided through a simple painting session with light snacks, warm herbal drinks, soothing background music, and complete permission to be terrible at art. The joy is entirely in the process.</p>
-                <p>No experience needed. No judgement. Just you, a small canvas, warm drinks, and time that belongs to you.</p>
-              </div>
-              
-              <div className="space-y-4 mb-10">
-                <div className="flex justify-between items-center bg-card p-4 rounded-xl border border-border">
-                  <span className="font-medium text-foreground">Stay Guests</span>
-                  <span className="text-primary">Complimentary</span>
-                </div>
-                <div className="flex justify-between items-center bg-card p-4 rounded-xl border border-border">
-                  <span className="font-medium text-foreground">Walk-in</span>
-                  <span className="text-primary">from ₦12,000 / $23 / £18 pp</span>
-                </div>
-                <div className="flex justify-between items-center bg-card p-4 rounded-xl border border-border">
-                  <span className="font-medium text-foreground">Private Group (up to 8)</span>
-                  <span className="text-primary">from ₦80,000 / $155 / £122</span>
-                </div>
-              </div>
-
-              <Button asChild size="lg" className="w-full sm:w-auto rounded-full bg-primary h-14 px-10 text-lg">
-                <a href="mailto:koredetanimowo2@gmail.com?subject=Sip %26 Paint Enquiry&body=Hello, I would like to book a Sip %26 Paint session at The Cocoon...">Book a Sip & Paint session</a>
-              </Button>
-            </div>
-          </motion.div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start border-t border-border pt-24">
             <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>

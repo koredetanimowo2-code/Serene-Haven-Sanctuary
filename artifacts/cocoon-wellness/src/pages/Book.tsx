@@ -7,7 +7,6 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
-import { BackNav } from "@/components/layout/BackNav";
 
 export default function Book() {
   const [guestType, setGuestType] = useState("");
@@ -28,9 +27,8 @@ export default function Book() {
   };
 
   return (
-    <div className="min-h-screen bg-background flex flex-col md:pl-20 pt-0 pb-20 md:pb-0">
+    <div className="min-h-screen bg-background flex flex-col md:pl-20">
       <Navbar />
-      <BackNav />
       <div className="flex-1 flex flex-col lg:flex-row">
         {/* Left Side - Image */}
         <div className="lg:w-1/2 relative hidden lg:block h-screen sticky top-0">

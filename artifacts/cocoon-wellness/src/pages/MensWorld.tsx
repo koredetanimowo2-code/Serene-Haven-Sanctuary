@@ -2,7 +2,6 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { motion } from "framer-motion";
 import { AddToCartButton } from "@/components/AddToCartButton";
-import { BackNav } from "@/components/layout/BackNav";
 
 const services = [
   { id: "mens-massage", name: "Deep Tissue Sports Massage", price: "from ₦25,000 / $45 / £35", priceNaira: 25000, priceUSD: 45, priceGBP: 35, desc: "For tired muscles, deep tension release, and accelerated recovery.", img: "/images/service-men-1.png" },
@@ -18,9 +17,8 @@ const services = [
 
 export default function MensWorld() {
   return (
-    <div className="min-h-screen bg-background md:pl-20 pt-0 pb-20 md:pb-0">
+    <div className="min-h-screen bg-background md:pl-20">
       <Navbar />
-      <BackNav />
       
       <section className="relative h-[80vh] flex items-end pb-24">
         <img src="/images/service-men.png" alt="Men's World" className="absolute inset-0 w-full h-full object-cover" onError={e=>e.currentTarget.src='/images/hero.png'} />

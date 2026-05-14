@@ -27,34 +27,17 @@ export function Navbar() {
     { name: "Standard Stay", href: "/stay" },
     { name: "VIP Suite", href: "/stay" },
     { name: "Exclusive Suite", href: "/stay" },
-    { name: "Nature Walk", href: "/services/sanctuary" },
-    { name: "Sip & Paint", href: "/stay#sip-and-paint" }
+    { name: "Nature Walk", href: "/services/sanctuary" }
   ];
 
   return (
     <>
-      {/* Mobile Bottom Nav */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 h-[80px] bg-card border-t border-border z-50 flex items-center justify-between px-2 pb-2">
-        <Link href="/" className={`flex flex-col items-center justify-center w-full h-full text-foreground/70 hover:text-primary ${location === "/" ? "text-primary" : ""}`}>
-          <Home size={22} />
-          <span className="text-[10px] mt-1 font-medium">Home</span>
-        </Link>
-        <button onClick={() => setMobileMenuOpen(true)} className={`flex flex-col items-center justify-center w-full h-full text-foreground/70 hover:text-primary ${location.startsWith("/services") ? "text-primary" : ""}`}>
-          <Globe size={22} />
-          <span className="text-[10px] mt-1 font-medium">Our Worlds</span>
+      {/* Mobile Top Bar */}
+      <div className="md:hidden fixed top-0 left-0 right-0 h-16 bg-background/95 backdrop-blur z-50 flex items-center justify-between px-6 border-b border-border">
+        <Link href="/" className="font-serif text-xl font-bold text-foreground">The Cocoon.</Link>
+        <button onClick={() => setMobileMenuOpen(true)} className="text-foreground p-2">
+          <Menu size={24} />
         </button>
-        <Link href="/stay" className={`flex flex-col items-center justify-center w-full h-full text-foreground/70 hover:text-primary ${location === "/stay" ? "text-primary" : ""}`}>
-          <Bed size={22} />
-          <span className="text-[10px] mt-1 font-medium">Stay</span>
-        </Link>
-        <Link href="/locations" className={`flex flex-col items-center justify-center w-full h-full text-foreground/70 hover:text-primary ${location === "/locations" ? "text-primary" : ""}`}>
-          <MapPin size={22} />
-          <span className="text-[10px] mt-1 font-medium">Locations</span>
-        </Link>
-        <Link href="/book" className={`flex flex-col items-center justify-center w-full h-full text-foreground/70 hover:text-primary ${location === "/book" ? "text-primary" : ""}`}>
-          <CalendarHeart size={22} />
-          <span className="text-[10px] mt-1 font-medium">Book</span>
-        </Link>
       </div>
 
       {/* Mobile Drawer */}

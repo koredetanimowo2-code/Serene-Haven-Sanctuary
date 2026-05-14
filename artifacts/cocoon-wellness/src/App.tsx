@@ -19,15 +19,12 @@ import Checkout from "@/pages/Checkout";
 import NotFound from "@/pages/not-found";
 
 import { CartProvider } from "@/lib/cart";
-import { ScrollToTop } from "@/components/layout/ScrollToTop";
 
 const queryClient = new QueryClient();
 
 function Router() {
   return (
-    <>
-      <ScrollToTop />
-      <Switch>
+    <Switch>
       <Route path="/" component={Home} />
       <Route path="/services" component={Services} />
       <Route path="/services/women" component={WomensWorld} />
@@ -42,8 +39,7 @@ function Router() {
       <Route path="/book" component={Book} />
       <Route path="/checkout" component={Checkout} />
       <Route component={NotFound} />
-      </Switch>
-    </>
+    </Switch>
   );
 }
 

@@ -2,7 +2,6 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { BackNav } from "@/components/layout/BackNav";
 
 const spaces = [
   { 
@@ -69,9 +68,8 @@ const spaces = [
 
 export default function SanctuarySpaces() {
   return (
-    <div className="min-h-screen bg-background md:pl-20 pt-0 pb-20 md:pb-0">
+    <div className="min-h-screen bg-background md:pl-20">
       <Navbar />
-      <BackNav />
       
       <section className="relative h-[80vh] flex items-end pb-24">
         <img src="/images/sanctuary.png" alt="Sanctuary Spaces" className="absolute inset-0 w-full h-full object-cover" onError={e=>e.currentTarget.src='/images/hero.png'} />

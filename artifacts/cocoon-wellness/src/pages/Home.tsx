@@ -6,7 +6,7 @@ import { Link } from "wouter";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background md:pl-20 pt-0 pb-20 md:pb-0">
+    <div className="min-h-screen bg-background md:pl-20">
       <Navbar />
 
       {/* Hero Section */}
@@ -222,20 +222,14 @@ export default function Home() {
       <section className="py-32 bg-card">
         <div className="container mx-auto px-6 lg:px-12 text-center">
           <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="font-serif text-5xl mb-16 text-foreground">Stories of Stillness</motion.h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { quote: "I booked a 5-day stay at the Lagos branch after losing my mother. I didn't know what I needed. I know now — it was this. The grief counsellor didn't try to fix me. She just sat with me. I left lighter.", author: "Adaeze O., Lagos, Nigeria" },
-              { quote: "My beard has never looked this good and I've never talked to a therapist before. Both happened on the same afternoon. The Men's World at The Cocoon is something else entirely.", author: "Marcus T., London, UK" },
-              { quote: "I brought my 6-year-old for the Children's World storytime spa. She fell asleep mid-pedicure and told me it was the best day of her life. I cried in the car.", author: "Fatima A., Toronto, Canada" },
-              { quote: "My dog Biscuit had the Luxury Spa Bath and the Calming Massage. She is normally anxious everywhere she goes. She slept the whole drive home and the whole next day. Revolutionary.", author: "James K., New York, USA" },
-              { quote: "I had my hair done at the Hair Studio in Dubai. I have 4C hair and I've learned to dread hairdressers. These people touched my hair like it was precious. Because it is.", author: "Sade M., Dubai, UAE" },
-              { quote: "The Dark Room changed my understanding of what rest is. I suffer from migraines and I've never found relief so complete. I booked a 7-day stay the day I left.", author: "Lena B., Paris, France" },
-              { quote: "I came in for a manicure, ended up in the reading room with a cup of rooibos tea for three hours. No one bothered me. No one asked me to leave. I have never felt so human.", author: "Zinhle D., Johannesburg, South Africa" },
-              { quote: "The Postpartum Suite held me in ways I didn't know I needed. The milk bath, the therapy session, the complete absence of anyone asking me to be okay — extraordinary.", author: "Nkechi F., Lagos, Nigeria" },
-              { quote: "I'm a single man in my 50s. I came to the Sip & Paint evening not expecting much. I painted something hideous and laughed more than I have in years. I'm coming back next month.", author: "David O., London, UK" },
-              { quote: "I was in the prayer room for two hours. I cried, I sang, I wrote things I've never said out loud. Someone knocked softly and left warm tea outside the door without interrupting. That kindness broke me open in the best way.", author: "Amara S., Toronto, Canada" }
+              { quote: "I arrived exhausted. I left feeling like I had been put back together piece by piece. The Dark Room changed my life.", author: "Sarah, London" },
+              { quote: "The only place in the city where nobody expects anything from me. It's truly a sanctuary.", author: "Ade, Lagos" },
+              { quote: "Finally, a luxury space that understands accessibility isn't just a ramp, it's a culture of care.", author: "Maria, Toronto" },
+              { quote: "Three days without my phone, eating beautiful food, sleeping in silence. I found myself again.", author: "James, New York" }
             ].map((t, i) => (
-              <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: (i % 3) * 0.1 }} className="p-8 bg-background rounded-3xl shadow-sm border border-border flex flex-col justify-between">
+              <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="p-8 bg-background rounded-3xl shadow-sm text-left border border-border">
                 <p className="text-foreground/80 mb-8 italic font-light leading-relaxed">"{t.quote}"</p>
                 <div className="font-serif text-primary text-lg">{t.author}</div>
               </motion.div>
